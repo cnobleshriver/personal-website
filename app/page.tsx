@@ -77,7 +77,7 @@ export default function Home() {
     } else if (command === 'joke') {
       const jokes = [
         "Why do programmers prefer dark mode? Because light attracts bugs!",
-        "How many programmers does it take to change a light bulb? None, that's a hardware problem.",
+        "How many programmers does it take to change a light bulb? None, thats a hardware problem.",
         "Why do Java developers wear glasses? Because they don't see sharp."
       ];
       const randomJoke = jokes[Math.floor(Math.random() * jokes.length)];
@@ -92,13 +92,13 @@ export default function Home() {
 
   const welcomeMessage = (
     <div className="mb-2">
-      Oh good, you're here! Feel free to explore, type commands, and discover the secrets hidden within. <br/>Type <span className="glow">help</span> for instructions.
+      Oh good, you&apos;re here! Feel free to explore, type commands, and discover the secrets hidden within. <br/>Type <span className="glow">help</span> for instructions.
     </div>
   );
 
   const aboutMessage = (
     <span>
-      Hello! My name is Christian. {'\n'}I am a computer science + math student at the University of Massachussets Amherst. {'\n'}I'm currently working as a research engineer at <a href="https://anthias.xyz" target="_blank" rel="noopener noreferrer" className="text-blue-500 underline">anthias.xyz</a>.
+      Hello! My name is Christian. {'\n'}I&apos;m a CS + math student at the University of Massachussets Amherst. I&apos;m currently exploring the world of DeFi and blockchain technology.
     </span>
   );
 
@@ -126,7 +126,7 @@ export default function Home() {
       <span className="glow ml-4">Anthias - </span>
       <a href="https://www.anthias.xyz" target="_blank" rel="noopener noreferrer" className="text-blue-500 underline">link</a><br />
       <span className="ml-8">
-      Anthias Labs is a boutique on-chain advisory firm focused on DeFi risk management and system design. We protect protocols with boutique risk infrastructure and advisory.
+      Anthias Labs is a boutique on-chain advisory firm focused on DeFi risk management and system design.
       </span><br /><br />
       <span className="glow ml-4">UMass Club Golf Website - </span>
       <a href="https://umass-club-golf.vercel.app" target="_blank" rel="noopener noreferrer" className="text-blue-500 underline">link</a><br />

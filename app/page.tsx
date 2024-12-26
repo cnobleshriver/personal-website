@@ -167,7 +167,7 @@ export default function Home() {
           <div id="command-output" className="mt-4">
             {commands.map((cmd, index) => (
               <div key={index} className="text-white">
-                <span>> {cmd}</span>
+                <span>&gt;{cmd}</span>
                 <div className="text-white mt-2">
                   {outputs[index]}
                 </div>

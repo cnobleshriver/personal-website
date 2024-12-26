@@ -175,7 +175,7 @@ export default function Home() {
             ))}
           </div>
           <div id="input-area" className="flex items-center mt-4 cursor-text">
-            <span id="prompt">></span>
+            <span id="prompt">&gt;</span>
             <input
               id="input"
               type="text"

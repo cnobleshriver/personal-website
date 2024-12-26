@@ -15,7 +15,7 @@ export default function Home() {
       inputRef.current.focus();
     }
 
-    const handleClick = (event) => {
+    const handleClick = (event: MouseEvent) => {
       if (inputRef.current && event.target !== inputRef.current) {
         inputRef.current.focus();
       }
@@ -28,14 +28,14 @@ export default function Home() {
     };
   }, [commands, outputs]);
 
-  const handleInputChange = (event) => {
+  const handleInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     const value = event.target.value;
     setInputValue(value);
     const match = availableCommands.find((cmd) => cmd.startsWith(value));
     setSuggestion(match || '');
   };
 
-  const handleKeyDown = (event) => {
+  const handleKeyDown = (event: React.KeyboardEvent<HTMLInputElement>) => {
     if (event.key === 'Enter') {
       event.preventDefault();
       processCommand(inputValue);
@@ -53,7 +53,7 @@ export default function Home() {
     }
   };
 
-  const processCommand = (command) => {
+  const processCommand = (command: string) => {
     setCommands([...commands, command]);
     console.log(command);
     command = command.toLowerCase();

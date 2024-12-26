@@ -1,5 +1,6 @@
 'use client';
 import { useState, useEffect, useRef } from 'react';
+import './globals.css';
 
 export default function Home() {
   const [inputValue, setInputValue] = useState('');
@@ -158,7 +159,7 @@ export default function Home() {
     <div id="root" className="h-screen cursor-default">
       <div id="container" className="h-full bg-gray-900 overflow-x-hidden overflow-y-auto" ref={outputRef}>
         <div id="content" className="text-gray-400 flex flex-col font-mono p-5 whitespace-pre-wrap">
-          <div id="banner" className="text-teal-500 text-4 font-bold mb-5 leading-4 glow overflow-x-auto whitespace-pre" >
+          <div id="banner" className="text-teal-500 text-4 font-bold mb-5 leading-4 glow ascii-art" >
             <pre>
               {`
         __         _               __         _                

@@ -99,7 +99,7 @@ export default function Home() {
 
   const welcomeMessage = (
     <div className="mb-2">
-      Oh good, you&apos;re here! Feel free to explore, type commands, and discover the secrets hidden within. <br/>Type <span className="glow">help</span> for instructions.
+      Welcome, my friend! Feel free to explore, type commands, and discover the secrets hidden within... <br/>Enter <span className="glow">&apos;help&apos;</span> for a list of available commands.
     </div>
   );
 
@@ -158,7 +158,7 @@ export default function Home() {
     <div id="root" className="h-screen cursor-default">
       <div id="container" className="h-full bg-gray-900 overflow-x-hidden overflow-y-auto" ref={outputRef}>
         <div id="content" className="text-gray-400 flex flex-col font-mono p-5 whitespace-pre-wrap">
-          <div id="banner" className="text-teal-500 text-4 font-bold mb-5 leading-4 glow" >
+          <div id="banner" className="text-teal-500 text-4 font-bold mb-5 leading-4 glow overflow-x-auto whitespace-pre" >
             <pre>
               {`
         __         _               __         _                

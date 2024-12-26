@@ -7,6 +7,7 @@ export default function Home() {
   const [outputs, setOutputs] = useState<(string | JSX.Element)[]>([]);
   const [suggestion, setSuggestion] = useState('');
   const inputRef = useRef<HTMLInputElement>(null);
+  const outputRef = useRef<HTMLDivElement>(null);
 
   const availableCommands = ['help', 'about', 'projects', 'repo', 'ping' , 'date', 'echo', 'clear', 'joke', 'random'];
 
@@ -26,6 +27,12 @@ export default function Home() {
     return () => {
       document.removeEventListener('click', handleClick);
     };
+  }, [commands, outputs]);
+
+  useEffect(() => {
+    if (outputRef.current) {
+      outputRef.current.scrollTop = outputRef.current.scrollHeight;
+    }
   }, [commands, outputs]);
 
   const handleInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
@@ -136,7 +143,7 @@ export default function Home() {
       <span className="glow ml-4">Face Tracking Nerf Turret - </span>
       <a href="https://sites.google.com/umass.edu/cics256-final-project/home?authuser=4" target="_blank" rel="noopener noreferrer" className="text-blue-500 underline">link</a><br />
       <span className="ml-8">
-      A sophisticated Nerf turret that utilizes OpenCV for facial tracking and is powered by an Arduino microcontroller.
+      A Nerf-dart-shooting turret that utilizes OpenCV for facial tracking and is powered by an Arduino microcontroller.
       </span><br />
     </span>
   );
@@ -149,7 +156,7 @@ export default function Home() {
 
   return (
     <div id="root" className="h-screen cursor-default">
-      <div id="container" className="h-full bg-gray-900 overflow-x-hidden overflow-y-auto">
+      <div id="container" className="h-full bg-gray-900 overflow-x-hidden overflow-y-auto" ref={outputRef}>
         <div id="content" className="text-gray-400 flex flex-col font-mono p-5 whitespace-pre-wrap">
           <div id="banner" className="text-teal-500 text-4 font-bold mb-5 leading-4 glow" >
             <pre>
@@ -176,6 +183,10 @@ export default function Home() {
           </div>
           <div id="input-area" className="flex items-center mt-4 cursor-text">
             <span id="prompt">&gt;</span>
+            <div className="relative w-full">
+            {suggestion && suggestion !== inputValue && (
+              <span className="text-gray-500 absolute left-2 z-10">{suggestion}</span>
+            )}
             <input
               id="input"
               type="text"
@@ -187,11 +198,9 @@ export default function Home() {
               onChange={handleInputChange}
               onKeyDown={handleKeyDown}
               ref={inputRef}
-              className="bg-transparent border-0 text-[#f0bf81] font-inherit text-inherit outline-none w-full ml-2"
+              className="bg-transparent border-0 text-[#f0bf81] font-inherit text-inherit outline-none w-full ml-2 pl-0 relative z-20"
             />
-            {suggestion && suggestion !== inputValue && (
-              <span className="text-gray-500 ml-2">{suggestion}</span>
-            )}
+            </div>
           </div>
         </div>
       </div>

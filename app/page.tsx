@@ -199,7 +199,7 @@ export default function Home() {
               onChange={handleInputChange}
               onKeyDown={handleKeyDown}
               ref={inputRef}
-              className="bg-transparent border-0 text-[#f0bf81] font-inherit text-inherit outline-none w-full ml-2 pl-0 relative z-20"
+              className="bg-transparent border-0 text-[#f0bf81] font-inherit text-white outline-none w-full ml-2 pl-0 relative z-20"
             />
             </div>
           </div>

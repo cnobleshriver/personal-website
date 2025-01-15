@@ -10,7 +10,7 @@ export default function Home() {
   const inputRef = useRef<HTMLInputElement>(null);
   const outputRef = useRef<HTMLDivElement>(null);
 
-  const availableCommands = ['help', 'about', 'projects', 'repo', 'ping' , 'date', 'echo', 'clear', 'joke', 'random'];
+  const availableCommands = ['help', 'about', 'projects', 'repo', 'research', 'ping' , 'date', 'echo', 'clear', 'joke', 'random'];
 
   useEffect(() => {
     if (inputRef.current) {
@@ -73,6 +73,8 @@ export default function Home() {
       setOutputs([...outputs, projectsMessage]);
     } else if (command === 'repo') {
       setOutputs([...outputs, repoMessage]);
+    } else if (command === 'research') {
+      setOutputs([...outputs, resarchMessage]);
     } else if (command === 'ping') {
       setOutputs([...outputs, 'pong!']);
     } else if (command === 'date') {
@@ -123,6 +125,8 @@ export default function Home() {
       <span className="ml-8">Check out my latest and greatest projects.</span><br />
       <span className="glow ml-4">repo</span><br />
       <span className="ml-8">Visit my GitHub repository.</span><br />
+      <span className="glow ml-4">research</span><br />
+      <span className="ml-8">Learn about my latest research.</span><br />
       <span className="glow ml-4">clear</span><br />
       <span className="ml-8">Clear the current screen.</span>
     </span>
@@ -146,6 +150,18 @@ export default function Home() {
       <span className="ml-8">
       A Nerf-dart-shooting turret that utilizes OpenCV for facial tracking and is powered by an Arduino microcontroller.
       </span><br />
+    </span>
+  );
+
+  const resarchMessage = (
+    <span>
+    <span>Research:</span><br /><br />
+    <span className="glow ml-4">Adrena&apos;s Fee Structure: A Competitive Analysis in the Perpetual DEX Market - </span>
+    <a href="https://lava-cheetah-7ac.notion.site/Adrena-s-Fee-Structure-A-Competitive-Analysis-in-the-Perpetual-DEX-Market-2f97813652384d93873ef4f388fce6e5" target="_blank" rel="noopener noreferrer" className="text-blue-500 underline">link</a><br />
+    <span className="glow ml-4">Adrena Fee Recommendations - </span>
+    <a href="https://lava-cheetah-7ac.notion.site/Adrena-Fee-Recommendations-1791d879b94680f7b0adcb3520749653" target="_blank" rel="noopener noreferrer" className="text-blue-500 underline">link</a><br />
+    <span className="glow ml-4">Insights into Toxic Flow - </span>
+    <a href="https://lava-cheetah-7ac.notion.site/Insights-Into-Toxic-Flow-17b1d879b94680df9f1fdee25ec7bc2c?pvs=74" target="_blank" rel="noopener noreferrer" className="text-blue-500 underline">link</a><br />
     </span>
   );
 

@@ -10,7 +10,7 @@ export default function Home() {
   const inputRef = useRef<HTMLInputElement>(null);
   const outputRef = useRef<HTMLDivElement>(null);
 
-  const availableCommands = ['help', 'about', 'projects', 'repo', 'research', 'ping' , 'date', 'echo', 'clear', 'joke', 'random'];
+  const availableCommands = ['help', 'about', 'projects', 'repo', 'research', 'ping' , 'date', 'echo', 'clear', 'joke', 'random', 'ls'];
 
   useEffect(() => {
     if (inputRef.current) {
@@ -84,6 +84,8 @@ export default function Home() {
     } else if (command === 'clear') {
       setCommands([]);
       setOutputs([]);
+    } else if (command === 'ls') {
+      setOutputs([...outputs, "Someone knows their way around... These are ALL available commands: \n" + availableCommands.join(', ')]);
     } else if (command === 'joke') {
       const jokes = [
         "Why do programmers prefer dark mode? Because light attracts bugs!",

@@ -85,7 +85,7 @@ export default function Home() {
       setCommands([]);
       setOutputs([]);
     } else if (command === 'ls') {
-      setOutputs([...outputs, "Someone knows their way around... These are ALL available commands: \n" + availableCommands.join(', ')]);
+      setOutputs([...outputs, "Very insightful of you... Fine, I'll list ALL available commands: \n" + availableCommands.join(', ')]);
     } else if (command === 'joke') {
       const jokes = [
         "Why do programmers prefer dark mode? Because light attracts bugs!",

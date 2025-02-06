@@ -10,7 +10,7 @@ export default function Home() {
   const inputRef = useRef<HTMLInputElement>(null);
   const outputRef = useRef<HTMLDivElement>(null);
 
-  const availableCommands = ['help', 'about', 'projects', 'repo', 'research', 'ping' , 'date', 'echo', 'clear', 'joke', 'random', 'ls'];
+  const availableCommands = ['help', 'about', 'projects', 'repo', 'research', 'ping' , 'date', 'echo', 'clear', 'contact', 'joke', 'random', 'ls'];
 
   useEffect(() => {
     if (inputRef.current) {
@@ -75,6 +75,8 @@ export default function Home() {
       setOutputs([...outputs, repoMessage]);
     } else if (command === 'research') {
       setOutputs([...outputs, resarchMessage]);
+    } else if (command === 'contact') {
+      setOutputs([...outputs, contactMessage]);
     } else if (command === 'ping') {
       setOutputs([...outputs, 'pong!']);
     } else if (command === 'date') {
@@ -110,9 +112,16 @@ export default function Home() {
 
   const aboutMessage = (
     <span>
-      Hello! My name is Christian. {'\n'}I&apos;m a CS + math student at the University of Massachussets Amherst. I&apos;m currently exploring the world of DeFi and blockchain technology.
+      Hello! My name is Christian. {'\n'}I&apos;m a CS + math student at the University of Massachussets Amherst. I&apos;m currently exploring the world of DeFi and blockchain technology, working as a research engineer at <a href="https://www.anthias.xyz" target="_blank" rel="noopener noreferrer" className="text-blue-500 underline">Anthias Labs</a>.
     </span>
   );
+
+  const contactMessage = (
+    <span>
+      <span>Let&apos;s connect!</span><br />
+      <span className="glow ml-4">Email: <a href="mailto:cnobleshriver@gmail.com" className="text-blue-500 underline">cnobleshriver@gmail.com</a></span>
+    </span>
+ );
 
   const helpMessage = (
     <span>
@@ -129,6 +138,8 @@ export default function Home() {
       <span className="ml-8">Visit my GitHub repository.</span><br />
       <span className="glow ml-4">research</span><br />
       <span className="ml-8">Learn about my latest research.</span><br />
+      <span className="glow ml-4">contact</span><br />
+      <span className="ml-8">Reach out to me!</span><br />
       <span className="glow ml-4">clear</span><br />
       <span className="ml-8">Clear the current screen.</span>
     </span>

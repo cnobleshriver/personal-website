@@ -180,6 +180,7 @@ export default function Home() {
 
   const repoMessage = (
     <span>
+      <span>Check out my GitHub repositories: </span>
       <a href="https://github.com/cnobleshriver" target="_blank" rel="noopener noreferrer" className="text-blue-500 underline">GitHub</a><br />
     </span>
   );

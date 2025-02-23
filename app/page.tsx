@@ -137,7 +137,7 @@ export default function Home() {
       <span className="glow ml-4">repo</span><br />
       <span className="ml-8">Visit my GitHub repository.</span><br />
       <span className="glow ml-4">research</span><br />
-      <span className="ml-8">Learn about my latest research.</span><br />
+      <span className="ml-8">View my essays and research.</span><br />
       <span className="glow ml-4">contact</span><br />
       <span className="ml-8">Reach out to me!</span><br />
       <span className="glow ml-4">clear</span><br />

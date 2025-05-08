@@ -171,10 +171,10 @@ export default function Home() {
     <span>Research:</span><br /><br />
     <span className="glow ml-4">Adrena&apos;s Fee Structure: A Competitive Analysis in the Perpetual DEX Market - </span>
     <a href="https://lava-cheetah-7ac.notion.site/Adrena-s-Fee-Structure-A-Competitive-Analysis-in-the-Perpetual-DEX-Market-2f97813652384d93873ef4f388fce6e5" target="_blank" rel="noopener noreferrer" className="text-blue-500 underline">link</a><br />
-    <span className="glow ml-4">Adrena Fee Recommendations - </span>
-    <a href="https://lava-cheetah-7ac.notion.site/Adrena-Fee-Recommendations-1791d879b94680f7b0adcb3520749653" target="_blank" rel="noopener noreferrer" className="text-blue-500 underline">link</a><br />
     <span className="glow ml-4">Insights into Toxic Flow - </span>
     <a href="https://lava-cheetah-7ac.notion.site/Insights-Into-Toxic-Flow-17b1d879b94680df9f1fdee25ec7bc2c?pvs=74" target="_blank" rel="noopener noreferrer" className="text-blue-500 underline">link</a><br />
+    <span className="glow ml-4">Ebisu Risk Assessment & Parameter Recommendations - </span>
+    <a href="/Ebisu_Final_deliverable.pdf" target="_blank" rel="noopener noreferrer" className="text-blue-500 underline">link</a><br />
     </span>
   );
 

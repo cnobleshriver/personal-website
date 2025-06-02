@@ -10,7 +10,7 @@ export default function Home() {
   const inputRef = useRef<HTMLInputElement>(null);
   const outputRef = useRef<HTMLDivElement>(null);
 
-  const availableCommands = ['help', 'about', 'projects', 'repo', 'research', 'ping' , 'date', 'echo', 'clear', 'contact', 'joke', 'random', 'ls'];
+  const availableCommands = ['help', 'about', 'projects', 'repo', 'ping' , 'date', 'echo', 'clear', 'contact', 'joke', 'random', 'ls'];
 
   useEffect(() => {
     if (inputRef.current) {
@@ -73,8 +73,8 @@ export default function Home() {
       setOutputs([...outputs, projectsMessage]);
     } else if (command === 'repo') {
       setOutputs([...outputs, repoMessage]);
-    } else if (command === 'research') {
-      setOutputs([...outputs, resarchMessage]);
+    // } else if (command === 'research') {
+    //   setOutputs([...outputs, resarchMessage]);
     } else if (command === 'contact') {
       setOutputs([...outputs, contactMessage]);
     } else if (command === 'ping') {
@@ -112,7 +112,7 @@ export default function Home() {
 
   const aboutMessage = (
     <span>
-      Hello! My name is Christian. {'\n'}I&apos;m a CS + math student at the University of Massachussets Amherst. I&apos;m currently exploring the world of DeFi and blockchain technology, working as a research engineer at <a href="https://www.anthias.xyz" target="_blank" rel="noopener noreferrer" className="text-blue-500 underline">Anthias Labs</a>.
+      Hello! My name is Chris. I&apos;m currently exploring the world of DeFi and blockchain technology, working as a research engineer at <a href="https://www.anthias.xyz" target="_blank" rel="noopener noreferrer" className="text-blue-500 underline">Anthias Labs</a>.
     </span>
   );
 
@@ -136,8 +136,8 @@ export default function Home() {
       <span className="ml-8">Check out my latest and greatest projects.</span><br />
       <span className="glow ml-4">repo</span><br />
       <span className="ml-8">Visit my GitHub repository.</span><br />
-      <span className="glow ml-4">research</span><br />
-      <span className="ml-8">View my essays and research.</span><br />
+      {/* <span className="glow ml-4">research</span><br />
+      <span className="ml-8">View my essays and research.</span><br /> */}
       <span className="glow ml-4">contact</span><br />
       <span className="ml-8">Reach out to me!</span><br />
       <span className="glow ml-4">clear</span><br />
@@ -166,17 +166,17 @@ export default function Home() {
     </span>
   );
 
-  const resarchMessage = (
-    <span>
-    <span>Research:</span><br /><br />
-    <span className="glow ml-4">Adrena&apos;s Fee Structure: A Competitive Analysis in the Perpetual DEX Market - </span>
-    <a href="https://lava-cheetah-7ac.notion.site/Adrena-s-Fee-Structure-A-Competitive-Analysis-in-the-Perpetual-DEX-Market-2f97813652384d93873ef4f388fce6e5" target="_blank" rel="noopener noreferrer" className="text-blue-500 underline">link</a><br />
-    <span className="glow ml-4">Insights into Toxic Flow - </span>
-    <a href="https://lava-cheetah-7ac.notion.site/Insights-Into-Toxic-Flow-17b1d879b94680df9f1fdee25ec7bc2c?pvs=74" target="_blank" rel="noopener noreferrer" className="text-blue-500 underline">link</a><br />
-    <span className="glow ml-4">Ebisu Risk Assessment & Parameter Recommendations - </span>
-    <a href="/Ebisu_Final_deliverable.pdf" target="_blank" rel="noopener noreferrer" className="text-blue-500 underline">link</a><br />
-    </span>
-  );
+  // const resarchMessage = (
+  //   <span>
+  //   <span>Research:</span><br /><br />
+  //   <span className="glow ml-4">Adrena&apos;s Fee Structure: A Competitive Analysis in the Perpetual DEX Market - </span>
+  //   <a href="https://lava-cheetah-7ac.notion.site/Adrena-s-Fee-Structure-A-Competitive-Analysis-in-the-Perpetual-DEX-Market-2f97813652384d93873ef4f388fce6e5" target="_blank" rel="noopener noreferrer" className="text-blue-500 underline">link</a><br />
+  //   <span className="glow ml-4">Insights into Toxic Flow - </span>
+  //   <a href="https://lava-cheetah-7ac.notion.site/Insights-Into-Toxic-Flow-17b1d879b94680df9f1fdee25ec7bc2c?pvs=74" target="_blank" rel="noopener noreferrer" className="text-blue-500 underline">link</a><br />
+  //   <span className="glow ml-4">Ebisu Risk Assessment & Parameter Recommendations - </span>
+  //   <a href="/Ebisu_Final_deliverable.pdf" target="_blank" rel="noopener noreferrer" className="text-blue-500 underline">link</a><br />
+  //   </span>
+  // );
 
   const repoMessage = (
     <span>

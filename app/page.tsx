@@ -69,7 +69,7 @@ export default function Home() {
       if (suggestion) {
         setInputValue(suggestion);
       }
-    } else if (event.ctrlKey && event.key === "h") {
+    } else if (event.ctrlKey && event.key === "l") {
       event.preventDefault();
       setCommands([]);
       setOutputs([]);

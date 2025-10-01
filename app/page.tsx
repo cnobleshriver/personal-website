@@ -164,10 +164,10 @@ export default function Home() {
       <span className="glow ml-4">
         Email:{" "}
         <a
-          href="mailto:cnobleshriver@gmail.com"
+          href="mailto:chris@anthias.xyz"
           className="text-blue-500 underline"
         >
-          cnobleshriver@gmail.com
+          chris@anthias.xyz
         </a>
       </span>
     </span>

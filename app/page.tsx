@@ -7,6 +7,7 @@ export default function Home() {
   const [commands, setCommands] = useState<string[]>([]);
   const [outputs, setOutputs] = useState<(string | JSX.Element)[]>([]);
   const [suggestion, setSuggestion] = useState("");
+  const [historyIndex, setHistoryIndex] = useState(-1);
   const inputRef = useRef<HTMLInputElement>(null);
   const outputRef = useRef<HTMLDivElement>(null);
 
@@ -64,15 +65,37 @@ export default function Home() {
       processCommand(inputValue);
       setInputValue("");
       setSuggestion("");
+      setHistoryIndex(-1);
     } else if (event.key === "Tab") {
       event.preventDefault();
       if (suggestion) {
         setInputValue(suggestion);
       }
+    } else if (event.key === "ArrowUp") {
+      event.preventDefault();
+      if (commands.length > 0) {
+        const newIndex = historyIndex < commands.length - 1 ? historyIndex + 1 : historyIndex;
+        setHistoryIndex(newIndex);
+        setInputValue(commands[commands.length - 1 - newIndex]);
+        setSuggestion("");
+      }
+    } else if (event.key === "ArrowDown") {
+      event.preventDefault();
+      if (historyIndex > 0) {
+        const newIndex = historyIndex - 1;
+        setHistoryIndex(newIndex);
+        setInputValue(commands[commands.length - 1 - newIndex]);
+        setSuggestion("");
+      } else if (historyIndex === 0) {
+        setHistoryIndex(-1);
+        setInputValue("");
+        setSuggestion("");
+      }
     } else if (event.ctrlKey && event.key === "l") {
       event.preventDefault();
       setCommands([]);
       setOutputs([]);
+      setHistoryIndex(-1);
     }
   };
 
@@ -178,9 +201,23 @@ export default function Home() {
       <span>Instructions:</span>
       <br />
       <span className="ml-4">
-        Type your commands and press Enter. You can even type a few letters and
-        press [tab] to autocomplete.
+        Type your commands and press Enter.
       </span>
+      <br />
+      <br />
+      <span>Keyboard Shortcuts:</span>
+      <br />
+      <span className="glow ml-4">Tab</span>
+      <br />
+      <span className="ml-8">Autocomplete commands</span>
+      <br />
+      <span className="glow ml-4">↑ / ↓</span>
+      <br />
+      <span className="ml-8">Cycle through command history</span>
+      <br />
+      <span className="glow ml-4">Ctrl + L</span>
+      <br />
+      <span className="ml-8">Clear the terminal</span>
       <br />
       <br />
       <span>Commands:</span>
@@ -218,9 +255,9 @@ export default function Home() {
       <span>Projects:</span>
       <br />
       <br />
-      <span className="glow ml-4">Anthias - </span>
+      <span className="glow ml-4">Moonwell Monitoring Dashboard - </span>
       <a
-        href="https://www.anthias.xyz"
+        href="https://risk.anthias.xyz/moonwell/base/overview"
         target="_blank"
         rel="noopener noreferrer"
         className="text-blue-500 underline"
@@ -229,8 +266,7 @@ export default function Home() {
       </a>
       <br />
       <span className="ml-8">
-        Anthias Labs is a boutique on-chain advisory firm focused on DeFi risk
-        management and system design.
+        Monitoring dashboard for the Moonwell protocol, built while at Anthias Labs.
       </span>
       <br />
       <br />
@@ -245,8 +281,7 @@ export default function Home() {
       </a>
       <br />
       <span className="ml-8">
-        A website for the UMass Club Golf team, which I am a member of. Built
-        with Next.js and Mantine.
+        A website for the UMass Club Golf team.
       </span>
       <br />
       <br />
@@ -333,10 +368,15 @@ export default function Home() {
           <div id="input-area" className="flex items-center mt-4 cursor-text">
             <span id="prompt">&gt;</span>
             <div className="relative w-full">
-              {suggestion && suggestion !== inputValue && (
-                <span className="text-gray-500 absolute left-2 z-10">
-                  {suggestion}
-                </span>
+              {suggestion && suggestion !== inputValue && inputValue.length > 0 && (
+                <>
+                  <span className="text-gray-500 absolute left-2 z-10">
+                    {suggestion}
+                  </span>
+                  <span className="text-gray-600 text-xs absolute left-2 -bottom-4 z-10">
+                    Press Tab to autocomplete
+                  </span>
+                </>
               )}
               <input
                 id="input"
